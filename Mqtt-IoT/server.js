@@ -90,8 +90,8 @@ var findQrcode = function(db, callback) {
     /* Print All qrcode in collections */
     console.log(docs[i].qrcode);
     /* Subscribe all topics query name 'qrcode' */
-    client.subscribe('hachi/' + docs[i].qrcode + '/in');
-    client.subscribe('hachi/' + docs[i].qrcode + '/in/state');
+    client.subscribe('ID/' + docs[i].qrcode + '/in');
+    client.subscribe('ID/' + docs[i].qrcode + '/in/state');
     /* Append elememts 'qrcode' to Qrcode array */
     qrcode.push(docs[i].qrcode);
     console.log(qrcode);
@@ -137,7 +137,7 @@ var findUsers = function(qrcode2,db, callback) {
 Connect to database
 ********************************************************************************************************************************/
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/hachiserver');
+mongoose.connect('mongodb://localhost:27017/server');
 /********************************************************************************************************************************
 Connect mqtt broker
 ********************************************************************************************************************************/
