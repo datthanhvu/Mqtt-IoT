@@ -1,5 +1,5 @@
 /**
-* <h1>HACHI API 1.0</h1>
+* <h1>API 1.0</h1>
 *
 *
 * Studio : http://www.datthanhvu.com
@@ -12,7 +12,7 @@
 * @since   2016-18-12
 */
 /********************************************************************************************************************************
-Hachi server API 1.0 use Nodejs
+ server API 1.0 use Nodejs
 ********************************************************************************************************************************/
 var Status = require('./status');
 var State = require('./state');
@@ -32,14 +32,14 @@ var qrcodecurrent;
 /********************************************************************************************************************************
 Connect to broker
 ********************************************************************************************************************************/
-var client  = mqtt.connect('mqtt://hachiserver.com:1883');
+var client  = mqtt.connect('mqtt://localhost:1883');
 /********************************************************************************************************************************
 Connect to Mongodb
 ********************************************************************************************************************************/
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
 // Connection URL
-var url = 'mongodb://localhost:27017/hachiserver';
+var url = 'mongodb://localhost:27017/server';
 // Use connect method to connect to the Server
 MongoClient.connect(url, function(err, db) {
   console.log("Connected correctly to server");
@@ -250,7 +250,7 @@ client.on('message', function (topic, message) {
 /********************************************************************************************************************************
 Configurate server on port 3001
 ********************************************************************************************************************************/
- server.listen(3001);
- console.log('Connect to port 3001');
+ server.listen(3000);
+ console.log('Connect to port 3000');
  //
  
